@@ -30,12 +30,13 @@ namespace WaterWorld.Game {
 
             Root.AddChild(duckObject);
 
-
             cameraObject = new GameObject();
             cameraObject.AddComponent(new Camera(Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.DegreesToRadians(90), (float)CoreEngine.Width / (float)CoreEngine.Height, 0.3f, 1000f)));
             cameraObject.AddComponent(new FreeLook(0.1f));
             Root.AddChild(cameraObject);
             cameraObject.Transform.Translate(0, 2f, -5);
+
+            // Testing github
         }
 
         public override void Input() {
