@@ -1,0 +1,32 @@
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\WaterWorld.exe.config
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\WaterWorld.exe
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\WaterWorld.pdb
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\AssimpNet.dll
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\OpenTK.dll
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\AssimpNet.pdb
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\AssimpNet.xml
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\OpenTK.xml
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\obj\Debug\WaterWorld.exe
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\obj\Debug\WaterWorld.pdb
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\Content\Shaders\basic.fs
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\Content\Shaders\basic.vs
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\Content\Models\duckCM.bmp
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Debug\Content\Models\duck.dae
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\obj\Debug\WaterWorld.csprojResolveAssemblyReference.cache
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\WaterWorld.exe.config
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\obj\Debug\WaterWorld.exe
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\obj\Debug\WaterWorld.pdb
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\Content\Models\duckCM.bmp
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\Content\Shaders\basic.fs
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\Content\Models\duck.dae
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\Content\Shaders\basic.vs
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\WaterWorld.exe
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\WaterWorld.pdb
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\OpenTK.dll
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\AssimpNet.pdb
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\AssimpNet.xml
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\bin\Debug\OpenTK.xml
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld\obj\Debug\WaterWorld.csprojResolveAssemblyReference.cache
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld.csharp\WaterWorld\bin\Debug\WaterWorld.exe.config
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld.csharp\WaterWorld\obj\Debug\WaterWorld.exe
+C:\Users\aerosol\Documents\Development\CSharp\WaterWorld\WaterWorld.csharp\WaterWorld\obj\Debug\WaterWorld.pdb

@@ -1,0 +1,14 @@
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\WaterWorld.exe.config
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\Content\Models\duckCM.bmp
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\Content\Shaders\basic.fs
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\Content\Models\duck.dae
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\Content\Shaders\basic.vs
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\WaterWorld.exe
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\WaterWorld.pdb
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\AssimpNet.dll
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\OpenTK.dll
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\AssimpNet.pdb
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\AssimpNet.xml
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\bin\Release\OpenTK.xml
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\obj\Release\WaterWorld.exe
+C:\Users\aerosol\documents\visual studio 2013\Projects\WaterWorld\WaterWorld\obj\Release\WaterWorld.pdb
