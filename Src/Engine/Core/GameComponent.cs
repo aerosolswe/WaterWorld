@@ -17,7 +17,7 @@ namespace WaterWorld.Engine {
         public virtual void AddToEngine() { }
 
         public GameObject Parent {
-            get { return parent; }
+            get { return  parent; }
             set { parent = value; }
         }
 

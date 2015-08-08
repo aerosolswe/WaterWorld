@@ -7,6 +7,7 @@ using OpenTK;
 
 namespace WaterWorld.Engine {
     class MathUtil {
+       
         public static Quaternion CreateFromMatrix(ref Matrix4 m) {
             Quaternion q;
 

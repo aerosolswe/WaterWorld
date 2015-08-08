@@ -7,53 +7,127 @@ using OpenTK;
 
 namespace WaterWorld.Engine {
     class Transform {
-        private Matrix4 model;
+
+        private Transform parent;
+        private Matrix4 parentMatrix;
+
+        private Vector3 position;
+        private Quaternion rotation;
+        private Vector3 scale;
+
+        private Vector3 oldPosition;
+        private Quaternion oldRotation;
+        private Vector3 oldScale;
 
         public Transform() {
-            model = Matrix4.Identity;
+            position = Vector3.Zero;
+            rotation = Quaternion.Identity;
+            scale = Vector3.One;
+
+            parentMatrix = Matrix4.Identity;
         }
 
-        public Matrix4 Model {
-            get { return model; }
-            set { model = value; }
+        public Transform(Vector3 position, Quaternion rotation, Vector3 scale) {
+            this.position = position;
+            this.rotation = rotation;
+            this.scale = scale;
+
+            parentMatrix = Matrix4.Identity;
         }
 
-        public void LookAt(Vector3 position, Vector3 point) {
-            model = Matrix4.Mult(model, Matrix4.LookAt(new Vector3(position.X, position.Y, -position.Z), new Vector3(point.X, point.Y, point.Z), Vector3.UnitY));
+        public void Update() {
+            if(oldPosition != null) {
+                oldPosition = position;
+                oldRotation = rotation;
+                oldScale = scale;
+            } else {
+                oldPosition = Vector3.Add(position, Vector3.One);
+                oldRotation = rotation * 0.5f;
+                oldScale = Vector3.Add(scale, Vector3.One);
+            }
         }
 
-        public void RotateX(float amt) {
-            model = Matrix4.Mult(model, Matrix4.CreateRotationX(amt));
+        public void Rotate(Vector3 axis, float angle) {
+            rotation = Quaternion.FromAxisAngle(axis, angle) * rotation;
         }
 
-        public void RotateY(float amt) {
-            model = Matrix4.Mult(model, Matrix4.CreateRotationY(amt));
+        public void Rotate(Quaternion rotationAmount) {
+            rotation = rotationAmount * rotation;
         }
 
-        public void RotateZ(float amt) {
-            model = Matrix4.Mult(model, Matrix4.CreateRotationZ(amt));
+        public bool HasChanged() {
+            if(parent != null && parent.HasChanged())
+                return true;
+
+            if(position != oldPosition)
+                return true;
+
+            if(rotation != oldRotation)
+                return true;
+
+            if(scale != oldScale)
+                return true;
+
+            return false;
         }
 
-        public void RotateAxisAngle(Vector3 axis, float angle) {
-            model = Matrix4.Mult(model, Matrix4.CreateFromAxisAngle(axis, angle));
+        public Matrix4 Transformation() {
+            Matrix4 translationMatrix = Matrix4.CreateTranslation(new Vector3(-position.X, -position.Y, position.Z));
+            Matrix4 rotationMatrix = Matrix4.CreateFromQuaternion(rotation);
+            Matrix4 scaleMatrix = Matrix4.CreateScale(scale);
+
+            return ParentMatrix() * (translationMatrix * rotationMatrix * scaleMatrix);
         }
 
-        public void Scale(float x, float y, float z) {
-            Scale(new Vector3(x, y, z));
+        private Matrix4 ParentMatrix() {
+            if(parent != null && parent.HasChanged())
+                parentMatrix = parent.Transformation();
+
+            return parentMatrix;
         }
 
-        public void Scale(Vector3 scale) {
-            model = Matrix4.Mult(model,
-                             Matrix4.CreateScale(scale));
+        public void SetParent(Transform parent) {
+            this.parent = parent;
         }
 
-        public void Translate(float x, float y, float z) {
-            Translate(new Vector3(x, y, z));
+        public Vector3 TransformedPos() {
+            return Vector3.Transform(position, parentMatrix);
         }
 
-        public void Translate(Vector3 translation) {
-            model = Matrix4.Mult(model,
-                             Matrix4.CreateTranslation(new Vector3(-translation.X, -translation.Y, translation.Z)));
+        public Quaternion TransformedRot() {
+            Quaternion parentRotation = new Quaternion(0, 0, 0, 1);
+
+            if(parent != null)
+                parentRotation = parent.TransformedRot();
+
+            return parentRotation * rotation;
+        }
+
+        public Vector3 Position {
+            get { return  position; }
+            set { position = value; }
+        }
+
+        public Quaternion Rotation {
+            get { return  rotation; }
+            set { rotation = value; }
+        }
+
+        public Vector3 Scale {
+            get { return  scale; }
+            set { scale = value; }
+        }
+        
+        public Vector3 Forward {
+            get { return Vector3.Transform(new Vector3(0, 0, 1), rotation); }
+        }
+
+        public Vector3 Right {
+            get { return Vector3.Transform(new Vector3(1, 0, 0), rotation); }
+        }
+
+        public Vector3 Up {
+            get { return Vector3.Transform(new Vector3(0, 1, 0), rotation); }
         }
     }
 }

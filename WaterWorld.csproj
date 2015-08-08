@@ -50,13 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Engine\Components\FreeLook.cs" />
+    <Compile Include="Src\Engine\Components\FreeMove.cs" />
     <Compile Include="Src\Engine\Components\MeshRenderer.cs" />
     <Compile Include="Src\Engine\Core\GameComponent.cs" />
     <Compile Include="Src\Engine\Core\CoreEngine.cs" />
     <Compile Include="Src\Engine\Core\GameObject.cs" />
     <Compile Include="Src\Engine\Core\GameScreen.cs" />
     <Compile Include="Src\Engine\Core\Transform.cs" />
-    <Compile Include="Src\Engine\Graphics\Camera.cs" />
+    <Compile Include="Src\Engine\Components\Camera.cs" />
     <Compile Include="Src\Engine\Graphics\GraphicsEngine.cs" />
     <Compile Include="Src\Engine\Graphics\GraphicsUtil.cs" />
     <Compile Include="Src\Engine\Graphics\Loaders\TextureLoader.cs" />

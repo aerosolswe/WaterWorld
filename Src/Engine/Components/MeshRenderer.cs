@@ -22,7 +22,7 @@ namespace WaterWorld.Engine {
             shader.Bind();
             material.Diffuse.Bind(TextureUnit.Texture0);
             shader.Uniformi("diffuse", 0);
-            shader.Uniform("MVP", Matrix4.Mult(Transform.Model, CoreEngine.graphicsEngine.MainCamera.VP));
+            shader.Uniform("MVP", Matrix4.Mult(Transform.Transformation(), CoreEngine.graphicsEngine.MainCamera.VP));
             mesh.Draw();
         }
     }

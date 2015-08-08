@@ -11,60 +11,76 @@ namespace WaterWorld.Engine {
         private List<GameComponent> components;
         private Transform transform;
 
+        private bool isActive;
+
         public GameObject() {
             children = new List<GameObject>();
             components = new List<GameComponent>();
             transform = new Transform();
+            isActive = true;
         }
 
         public void AddChild(GameObject child) {
             children.Add(child);
             child.AddToEngine();
+            child.Transform.SetParent(transform);
         }
 
         public void AddComponent(GameComponent component) {
-            component.Parent = this;
             components.Add(component);
+            component.Parent = this;
         }
 
         public virtual void Input() {
-            foreach(GameComponent component in components)
-                component.Input();
+            Transform.Update();
 
-            foreach(GameObject child in children)
-                child.Input();
+            if(isActive) {
+                foreach(GameComponent component in components)
+                    component.Input();
+
+                foreach(GameObject child in children)
+                    child.Input();
+            }
         }
 
         public virtual void FixedUpdate() {
-            foreach(GameComponent component in components)
-                component.FixedUpdate();
+            if(isActive) {
+                foreach(GameComponent component in components)
+                    component.FixedUpdate();
 
-            foreach(GameObject child in children)
-                child.FixedUpdate();
+                foreach(GameObject child in children)
+                    child.FixedUpdate();
+            }
         }
 
         public virtual void Update() {
-            foreach(GameComponent component in components)
-                component.Update();
+            if(isActive) {
+                foreach(GameComponent component in components)
+                    component.Update();
 
-            foreach(GameObject child in children)
-                child.Update();
+                foreach(GameObject child in children)
+                    child.Update();
+            }
         }
 
         public virtual void Render(Shader shader) {
-            foreach(GameComponent component in components)
-                component.Render(shader);
+            if(isActive) {
+                foreach(GameComponent component in components)
+                    component.Render(shader);
 
-            foreach(GameObject child in children)
-                child.Render(shader);
+                foreach(GameObject child in children)
+                    child.Render(shader);
+            }
         }
 
         public virtual void Resize() {
-            foreach(GameComponent component in components)
-                component.Resize();
+            if(isActive) {
+                foreach(GameComponent component in components)
+                    component.Resize();
 
-            foreach(GameObject child in children)
-                child.Resize();
+                foreach(GameObject child in children)
+                    child.Resize();
+            }
         }
 
         public virtual void Dispose() {
@@ -77,6 +93,11 @@ namespace WaterWorld.Engine {
 
         public Transform Transform {
             get { return transform; }
+        }
+
+        public bool IsActive {
+            get { return  isActive; }
+            set { isActive = value; }
         }
 
         public virtual void AddToEngine() {
