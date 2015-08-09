@@ -29,8 +29,10 @@ namespace WaterWorld.Game {
             cameraObject = new GameObject();
             cameraObject.AddComponent(new Camera(Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.DegreesToRadians(90), (float)CoreEngine.Width / (float)CoreEngine.Height, 0.3f, 1000f)));
             cameraObject.AddComponent(new FreeMove(10));
+            cameraObject.AddComponent(new FreeLook(1));
             Root.AddChild(cameraObject);
             cameraObject.Transform.Position = new Vector3(0, 0, -15);
+
         }
 
         public override void Input() {
@@ -46,7 +48,9 @@ namespace WaterWorld.Game {
         float temp = 0.0f;
         public override void Update() {
             base.Update();
-            
+            //cameraObject.Transform.LookAt(new Vector3(0, 0, 0));
+
+            //duckObject.Transform.LookAt(cameraObject.Transform.Position);
             temp += Time.DeltaTime * 8;
             float distance = 10;
             //cameraObject.Transform.LookAt(new Vector3((float)(Math.Sin(temp * (Math.PI / 180)) * distance), distance / 3, (float)(Math.Cos(temp * (Math.PI / 180)) * distance)), new Vector3(0, 0, 0));

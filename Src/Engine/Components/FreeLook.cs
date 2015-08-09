@@ -53,13 +53,24 @@ namespace WaterWorld.Engine {
                 bool rotY = deltaPos.X != 0;
                 bool rotX = deltaPos.Y != 0;
 
-                Vector3 right = Vector3.Transform(new Vector3(1, 0, 0), Transform.Transformation()).Normalized();
+                Vector3 euler = Vector3.Zero;
 
                 if(rotY)
-                    Transform.Rotate(new Vector3(0, 1, 0), (float)MathHelper.DegreesToRadians(-deltaPos.X * sensitivity));
-                if(rotX)
-                    Transform.Rotate(new Vector3(1, 0, 0), (float)MathHelper.DegreesToRadians(-deltaPos.Y * sensitivity));
+                    euler.X = (float)MathHelper.DegreesToRadians(-deltaPos.X * sensitivity);
 
+                if(rotX)
+                    euler.Z = (float)MathHelper.DegreesToRadians(-deltaPos.Y * sensitivity);
+               
+
+                Transform.Rotate(euler);
+
+                //Vector3 right = Vector3.Transform(new Vector3(1, 0, 0), Transform.Transformation()).Normalized();
+
+                //if(rotY)
+                //    Transform.Rotate(new Vector3(0, 1, 0), (float)MathHelper.DegreesToRadians(-deltaPos.X * sensitivity));
+                //if(rotX)
+                //    Transform.Rotate(new Vector3(1, 0, 0), (float)MathHelper.DegreesToRadians(-deltaPos.Y * sensitivity));
+                
                 if(rotY || rotX)
                     System.Windows.Forms.Cursor.Position = new Point((int)center.X, (int)center.Y);
             }

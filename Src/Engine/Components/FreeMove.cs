@@ -99,7 +99,6 @@ namespace WaterWorld.Engine {
             if(moveDown)
                 Move(new Vector3(0, 1, 0), -speed);
 
-            Console.WriteLine(Transform.Position);
         }
 
         private void Move(Vector3 dir, float amt) {

@@ -55,6 +55,14 @@ namespace WaterWorld.Engine {
             rotation = rotationAmount * rotation;
         }
 
+        public void Rotate(Vector3 euler) {
+            rotation = MathUtil.CreateFromEuler(euler) * rotation;
+        }
+
+        public void LookAt(Vector3 point) {
+            //rotation = Matrix4.LookAt(position, point, new Vector3(0, 1, 0));
+        }
+        
         public bool HasChanged() {
             if(parent != null && parent.HasChanged())
                 return true;
@@ -72,11 +80,12 @@ namespace WaterWorld.Engine {
         }
 
         public Matrix4 Transformation() {
-            Matrix4 translationMatrix = Matrix4.CreateTranslation(new Vector3(-position.X, -position.Y, position.Z));
-            Matrix4 rotationMatrix = Matrix4.CreateFromQuaternion(rotation);
-            Matrix4 scaleMatrix = Matrix4.CreateScale(scale);
+            Matrix4 model = Matrix4.Identity;
+            model *= Matrix4.CreateTranslation(new Vector3(-position.X, -position.Y, position.Z));
+            model *= Matrix4.CreateFromQuaternion(rotation);
+            model *= Matrix4.CreateScale(scale);
 
-            return ParentMatrix() * (translationMatrix * rotationMatrix * scaleMatrix);
+            return ParentMatrix() * model;
         }
 
         private Matrix4 ParentMatrix() {
@@ -95,7 +104,7 @@ namespace WaterWorld.Engine {
         }
 
         public Quaternion TransformedRot() {
-            Quaternion parentRotation = new Quaternion(0, 0, 0, 1);
+            Quaternion parentRotation = Quaternion.Identity;
 
             if(parent != null)
                 parentRotation = parent.TransformedRot();
